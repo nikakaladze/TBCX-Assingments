@@ -1,0 +1,260 @@
+html, body {
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+}
+
+.main-content {
+    min-height: 100vh;
+    overflow-y: auto;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin:20px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Card styling */
+.grid-card {
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Card title styling */
+.grid-card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #222;
+    font-weight: 600;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Card paragraph styling */
+.grid-card p {
+    line-height: 1.6;
+    color: #666;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+/* Card footer styling */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Icon and text styling for likes and views */
+.likes, .views {
+    display: flex;
+    align-items: center;
+}
+
+.likes svg, .views svg {
+    margin-right: 5px;
+    fill: #888;
+    transition: fill 0.3s ease;
+}
+
+/* Hover effect */
+.grid-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.grid-card:hover .likes svg,
+.grid-card:hover .views svg {
+    fill: #3a86ff;
+}
+
+/* Pagination styles */
+/* Pagination container */
+
+.pagination_Container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+.Button_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.pagination {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    padding: 10px 20px;
+    
+}
+
+/* Previous and Next Buttons */
+.prev-button,
+.next-button {
+    background-color: transparent;
+    border: 2px solid #1a73e8;
+    color: #1a73e8;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.next-button {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.prev-button:disabled,
+.next-button:disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    border-color: #aaa;
+    cursor: not-allowed;
+}
+
+.prev-button:hover:not(:disabled),
+.next-button:hover:not(:disabled) {
+    background-color: #1a73e8;
+    color: white;
+}
+
+/* Page Info Container */
+.page-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.page-info span {
+    font-size: 1rem;
+    color: #555;
+}
+
+.page-input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background-color: white;
+    margin: 0 5px;
+}
+
+/* Loading Screen */
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+}
+
+/* Spinner Styles */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #1a73e8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes for Spinner Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fullscreen loading screen while data is being fetched */
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    z-index: 999;
+}
+
+/* Spinner Styles */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #1a73e8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,98 @@
+.productContainer {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.productTitle {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.productDescription,
+.productCategory,
+.productPrice,
+.productNewPrice,
+.productRating,
+.productStock,
+.productBrand,
+.productSKU,
+.productWeight,
+.productWarrantyInformation,
+.productShippingInformation,
+.productAvailabilityStatus,
+.productReturnPolicy,
+.productMinimumOrderQuantity,
+.productBarcode {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 5px 0;
+}
+
+.productTags {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.productTag {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+.productDimensions {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 5px 0;
+}
+
+.productQRCode {
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+}
+
+.productThumbnail {
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+}
+
+.productReviewsTitle {
+    margin:20px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.productReviewsList {
+    padding-left: 20px;
+}
+
+.productReview {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.productReviewsList li{
+    list-style-type: none;
+}
