@@ -1,34 +1,31 @@
-'use client'
+// This is an async server component in the app router
 import ProductCard from "../../Components/product/ProductCard";
-import { useEffect, useState } from "react";
-const Products = () => {
-  const [list, setList] = useState([]);
-  
 
-
+// Server-side fetching directly in the component
+const Products = async () => {
   const productsUrl = "https://dummyjson.com/products";
 
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-       
-        const response = await fetch(productsUrl);
-        const data = await response.json();
-        setList(data.products);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchProducts();
-  }, []);
+  let products = [];
+
+  try {
+    const response = await fetch(productsUrl);
+    const data = await response.json();
+    products = data.products;
+  } catch (error) {
+    console.error("Failed to fetch products:", error);
+  }
 
   return (
     <div className="product-list">
       <h1>Products</h1>
       <div className="grid">
-        {list.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        ) : (
+          <p>No products found</p>
+        )}
       </div>
     </div>
   );
