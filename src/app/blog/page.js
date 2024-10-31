@@ -20,7 +20,7 @@ const Blog = async ({ searchParams }) => {
         <div className="main-title">
           <h1>News Page</h1>
         </div>
-        <div className="grid-container">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5 p-5 max-w-[1200px] mx-auto opacity-100 transform scale-100 transition-opacity transition-transform duration-500 ease-in-out">
           {posts.length > 0 ? (
             posts.map((post) => (
               <Link
